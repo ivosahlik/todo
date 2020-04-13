@@ -3,7 +3,7 @@
     <div class="todo-wrapper">
       <div class="todo-container">
         <todo-list :todos="todos" />
-        <div class="todo-container--btn__create">
+        <div class="todo-container--btn-create">
           <div class="app-button">Create</div>
         </div>
       </div>
@@ -58,6 +58,19 @@ export default {
   margin-top: 60px;
 }
 
+.app-button {
+  background-color: #ffd906;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .todo {
   &-wrapper {
     display: flex;
@@ -65,15 +78,20 @@ export default {
     width: 100%;
   }
   &-container {
+    display: flex;
+    flex-direction: column;
     width: 400px;
     min-height: 400px;
     background-color: #ededed;
     border-radius: 5px;
   }
+  &-container--btn-create {
+    margin: 10px;
+  }
 }
 
 .modal {
-  display: block;
+  display: none;
   position: fixed;
   z-index: 9999;
   width: 100%;
@@ -89,14 +107,5 @@ export default {
     width: 80%;
     border: 1px solid #888;
   }
-}
-
-.app-button {
-  background-color: #ffd906;
-  padding: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  border-radius: 5px;
 }
 </style>

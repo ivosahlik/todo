@@ -26,4 +26,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.todo-list {
+  flex: 1;
+}
 </style>
