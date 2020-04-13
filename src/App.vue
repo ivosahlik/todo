@@ -8,19 +8,21 @@
         </div>
       </div>
     </div>
-    <div class="modal">
-      <div class="modal-content">Modal Content</div>
-    </div>
+    <modal />
   </div>
 </template>
 
 <script>
 import playground from "./playground";
 import TodoList from "@/components/Todo/TodoList";
+import Modal from "@/components/Modal/Modal";
 
 export default {
   name: "App",
-  components: { TodoList },
+  components: {
+    TodoList,
+    Modal
+  },
   data() {
     return {
       todos: [
@@ -87,25 +89,6 @@ export default {
   }
   &-container--btn-create {
     margin: 10px;
-  }
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  top: 0;
-  left: 0;
-  background-color: rgba($color: #000000, $alpha: 0.4);
-  &-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 25px;
-    width: 80%;
-    border: 1px solid #888;
   }
 }
 </style>
