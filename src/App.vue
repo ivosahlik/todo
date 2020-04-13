@@ -34,6 +34,10 @@ export default {
 </script>
 
 <style lang="scss">
+$color-red: red;
+$color-white: white;
+$color-grey: grey;
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -43,37 +47,34 @@ export default {
   margin-top: 60px;
 }
 
-.todo-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.todo-container {
-  width: 400px;
-  min-height: 400px;
-  background-color: #ededed;
-  border-radius: 5px;
-}
-
-.todo-item {
-  background-color: grey;
-}
-
-.todo-item--content {
-  min-height: 70px;
-  margin: 10px;
-  padding: 10px;
-  color: white;
-  font-size: 23px;
-  border-radius: 5px;
-}
-
-.todo-item__title {
-  font-weight: bold;
-}
-
-.todo-item__description {
-  font-size: 19px;
+.todo {
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  &-container {
+    width: 400px;
+    min-height: 400px;
+    background-color: #ededed;
+    border-radius: 5px;
+  }
+  &-item {
+    background-color: $color-grey;
+    &--content {
+      min-height: 70px;
+      margin: 10px;
+      padding: 10px;
+      color: $color-white;
+      font-size: 23px;
+      border-radius: 5px;
+    }
+    &__title {
+      font-weight: bold;
+    }
+    &__description {
+      font-size: 19px;
+    }
+  }
 }
 </style>

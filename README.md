@@ -34,6 +34,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 npm intall --save sass-loader node-sass
 
-#
+# BEM
 
 https://www.vzhurudolu.cz/prirucka/bem
+
+# Sass/SCSS
+
+https://vue-loader.vuejs.org/guide/pre-processors.html#sass
