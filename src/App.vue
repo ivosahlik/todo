@@ -4,11 +4,13 @@
       <div class="todo-container">
         <todo-list :todos="todos" />
         <div class="todo-container--btn-create">
-          <div class="app-button">Create</div>
+          <div @click="openModal" class="app-button">
+            Create
+          </div>
         </div>
       </div>
     </div>
-    <modal />
+    <modal :isModalOpen="isModalOpen" @modalClosed="closeModal" />
   </div>
 </template>
 
@@ -25,6 +27,7 @@ export default {
   },
   data() {
     return {
+      isModalOpen: false,
       todos: [
         {
           _id: "1",
@@ -46,6 +49,16 @@ export default {
   },
   created() {
     playground();
+  },
+  methods: {
+    openModal() {
+      console.log("Opening modal!!!!");
+      this.isModalOpen = true;
+    },
+    closeModal(event) {
+      console.log(event.lastName);
+      this.isModalOpen = false;
+    }
   }
 };
 </script>

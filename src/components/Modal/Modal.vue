@@ -1,15 +1,28 @@
 <template>
-  <div class="modal" :class="{ 'modal__is-active': isActive }">
-    <div class="modal-content">Modal Content</div>
+  <div class="modal" :class="{ 'modal__is-active': isModalOpen }">
+    <div class="modal-content">
+      <span class="modal-close" @click="emnitCloseModal">&times;</span>
+      <p>Modal Content</p>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      isActive: true
-    };
+  props: {
+    isModalOpen: {
+      require: true,
+      type: Boolean
+    }
+  },
+  methods: {
+    emnitCloseModal() {
+      const data = {
+        firstNamr: "Ivo",
+        lastName: "Vosahlik"
+      };
+      this.$emit("modalClosed", data);
+    }
   }
 };
 </script>
@@ -34,6 +47,16 @@ export default {
   }
   &__is-active {
     display: block;
+  }
+  &-close {
+    color: #aaa;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 8px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 </style>
