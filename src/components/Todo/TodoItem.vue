@@ -1,12 +1,26 @@
 <template>
   <div class="todo-item todo-item--content">
-    <div class="todo-item__title">Title</div>
-    <div class="todo-item__description">Description</div>
+    <div class="todo-item__title">{{title}}</div>
+    <div class="todo-item__description">{{description}}</div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  //props: ["title", "description"],
+  props: {
+    title: {
+      type: String,
+      required: true,
+      default: "Default Title"
+    },
+    description: {
+      type: String,
+      required: true,
+      default: "Default Description"
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
