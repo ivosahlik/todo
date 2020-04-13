@@ -2,20 +2,7 @@
   <div id="app">
     <div class="todo-wrapper">
       <div class="todo-container">
-        <div class="todo-list">
-          <div class="todo-item todo-item--content">
-            <div class="todo-item__title">Title</div>
-            <div class="todo-item__description">Description</div>
-          </div>
-          <div class="todo-item todo-item--content">
-            <div class="todo-item__title">Title</div>
-            <div class="todo-item__description">Description</div>
-          </div>
-          <div class="todo-item todo-item--content">
-            <div class="todo-item__title">Title</div>
-            <div class="todo-item__description">Description</div>
-          </div>
-        </div>
+        <todo-list />
       </div>
     </div>
   </div>
@@ -23,21 +10,18 @@
 
 <script>
 import playground from "./playground";
+import TodoList from "@/components/Todo/TodoList";
 
 export default {
   name: "App",
-  components: {},
+  components: { TodoList },
   created() {
     playground();
   }
 };
 </script>
 
-<style lang="scss">
-$color-red: red;
-$color-white: white;
-$color-grey: grey;
-
+<style lang="scss" scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -58,23 +42,6 @@ $color-grey: grey;
     min-height: 400px;
     background-color: #ededed;
     border-radius: 5px;
-  }
-  &-item {
-    background-color: $color-grey;
-    &--content {
-      min-height: 70px;
-      margin: 10px;
-      padding: 10px;
-      color: $color-white;
-      font-size: 23px;
-      border-radius: 5px;
-    }
-    &__title {
-      font-weight: bold;
-    }
-    &__description {
-      font-size: 19px;
-    }
   }
 }
 </style>
