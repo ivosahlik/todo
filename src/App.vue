@@ -3,14 +3,11 @@
     <div class="todo-wrapper">
       <div class="todo-container">
         <todo-list :todos="todos" />
-        <div class="todo-container--btn-create">
-          <div @click="openModal" class="app-button">
-            Create
-          </div>
+        <div class="todo-container--modal">
+          <modal />
         </div>
       </div>
     </div>
-    <modal :isModalOpen="isModalOpen" @modalClosed="closeModal" />
   </div>
 </template>
 
@@ -27,7 +24,6 @@ export default {
   },
   data() {
     return {
-      isModalOpen: false,
       todos: [
         {
           _id: "1",
@@ -49,16 +45,6 @@ export default {
   },
   created() {
     playground();
-  },
-  methods: {
-    openModal() {
-      console.log("Opening modal!!!!");
-      this.isModalOpen = true;
-    },
-    closeModal(event) {
-      console.log(event.lastName);
-      this.isModalOpen = false;
-    }
   }
 };
 </script>
@@ -71,19 +57,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-.app-button {
-  background-color: #ffd906;
-  padding: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  border-radius: 5px;
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 
 .todo {
@@ -100,7 +73,7 @@ export default {
     background-color: #ededed;
     border-radius: 5px;
   }
-  &-container--btn-create {
+  &-container--modal {
     margin: 10px;
   }
 }

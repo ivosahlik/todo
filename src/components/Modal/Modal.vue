@@ -1,28 +1,21 @@
 <template>
-  <div class="modal" :class="{ 'modal__is-active': isModalOpen }">
-    <div class="modal-content">
-      <span class="modal-close" @click="emnitCloseModal">&times;</span>
-      <p>Modal Content</p>
+  <div>
+    <div @click="isModalOpen = true" class="app-button">Create</div>
+    <div class="modal" :class="{ 'modal--is-active': isModalOpen }">
+      <div class="modal-content">
+        <span class="modal-close" @click="isModalOpen = false">&times;</span>
+        <p>Modal Content</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    isModalOpen: {
-      require: true,
-      type: Boolean
-    }
-  },
-  methods: {
-    emnitCloseModal() {
-      const data = {
-        firstNamr: "Ivo",
-        lastName: "Vosahlik"
-      };
-      this.$emit("modalClosed", data);
-    }
+  data() {
+    return {
+      isModalOpen: false
+    };
   }
 };
 </script>
@@ -45,7 +38,7 @@ export default {
     width: 80%;
     border: 1px solid #888;
   }
-  &__is-active {
+  &--is-active {
     display: block;
   }
   &-close {
@@ -57,6 +50,19 @@ export default {
     &:hover {
       cursor: pointer;
     }
+  }
+}
+
+.app-button {
+  background-color: #ffd906;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
   }
 }
 </style>
