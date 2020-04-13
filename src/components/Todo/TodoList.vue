@@ -1,8 +1,11 @@
 <template>
   <div class="todo-list">
-    <todo-item :title="'Title 1'" :description="'Description 1'" />
-    <todo-item :title="'Title 1'" :description="'Description 1'" />
-    <todo-item :title="todoTitle" :description="todoDescription" />
+    <todo-item
+      v-for="todo in todos"
+      :key="todo._id"
+      :title="todo.title"
+      :description="todo.description"
+    />
   </div>
 </template>
 
@@ -10,14 +13,14 @@
 import TodoItem from "@/components/Todo/TodoItem";
 
 export default {
+  props: {
+    todos: {
+      type: Array,
+      required: true
+    }
+  },
   components: {
     TodoItem
-  },
-  data() {
-    return {
-      todoTitle: "aaaaaaaaa",
-      todoDescription: "bbbbbbbbbbbbb"
-    };
   }
 };
 </script>

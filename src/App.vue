@@ -2,7 +2,7 @@
   <div id="app">
     <div class="todo-wrapper">
       <div class="todo-container">
-        <todo-list />
+        <todo-list :todos="todos" />
       </div>
     </div>
   </div>
@@ -15,6 +15,27 @@ import TodoList from "@/components/Todo/TodoList";
 export default {
   name: "App",
   components: { TodoList },
+  data() {
+    return {
+      todos: [
+        {
+          _id: "1",
+          title: "Title 1",
+          description: "Description 1"
+        },
+        {
+          _id: "2",
+          title: "Title 2",
+          description: "Description 2"
+        },
+        {
+          _id: "3",
+          title: "Title 3",
+          description: "Description 3"
+        }
+      ]
+    };
+  },
   created() {
     playground();
   }
