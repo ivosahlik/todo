@@ -3,6 +3,9 @@
     <div class="todo-wrapper">
       <div class="todo-container">
         <todo-list :todos="todos" />
+        <div class="todo-container--btn__create">
+          <div class="app-button">Create</div>
+        </div>
       </div>
     </div>
     <div class="modal">
@@ -86,5 +89,14 @@ export default {
     width: 80%;
     border: 1px solid #888;
   }
+}
+
+.app-button {
+  background-color: #ffd906;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
 }
 </style>
